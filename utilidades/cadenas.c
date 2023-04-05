@@ -4,10 +4,12 @@
 
 void imprimir_titulo(char* titulo) {
     printf("\n\n\x1b[36m %s \x1b[0m\n", titulo);
-    char* subrayado = malloc(strlen(titulo) + 1);
-    for (int i = 0; i < strlen(titulo); i++) {
+    size_t longitud = strlen(titulo);
+    char* subrayado = malloc(longitud + 1);
+    for (int i = 0; i < longitud; i++) {
         subrayado[i] = titulo[i] != ' ' ? '-' : ' ';
     }
+    subrayado[longitud] = '\0';
     printf("\x1b[34m %s \x1b[0m\n\n", subrayado);
 
     free(subrayado);
