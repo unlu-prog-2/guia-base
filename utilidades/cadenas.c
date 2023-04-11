@@ -2,10 +2,10 @@
 #include <string.h>
 #include <stdio.h>
 
-void imprimir_titulo(char* titulo) {
+void imprimir_titulo(char *titulo) {
     printf("\n\n\x1b[36m %s \x1b[0m\n", titulo);
     size_t longitud = strlen(titulo);
-    char* subrayado = malloc(longitud + 1);
+    char *subrayado = malloc(longitud + 1);
     for (int i = 0; i < longitud; i++) {
         subrayado[i] = titulo[i] != ' ' ? '-' : ' ';
     }
