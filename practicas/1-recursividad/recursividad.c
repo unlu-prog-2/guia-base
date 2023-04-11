@@ -28,8 +28,8 @@ int *explosion(int n, int b, int *size) {
 char *chinos(unsigned int nivel) {
 }
 
-char* agregarSeparadoresRecursivo(char* numero, int indice, int contador) {
+char *agregarSeparadoresRecursivo(char *numero, int indice, int contador) {
 }
 
-char* agregarSeparadorMiles(char* numero) {
+char *agregarSeparadorMiles(char *numero) {
 }

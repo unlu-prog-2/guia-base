@@ -4,7 +4,8 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdbool.h>
-#include "aserciones.h"
+#include <tipo_elemento.h>
+#include "listas/listas.h"
 
 bool bool_eq(bool real, bool esperado);
 
@@ -44,6 +45,25 @@ bool double_lt(double real, double esperado);
 
 bool double_lte(double real, double esperado);
 
+// ------
+// Arrays
+// ------
 bool int_array_eq(int *real, int *esperado, int longReal, int longEsperado);
+
+// ------------
+// TipoElemento
+// ------------
+bool te_eq(TipoElemento real, TipoElemento esperado);
+
+bool te_eq_valor(TipoElemento real, TipoElemento esperado,
+                 bool (*compararTipoElemento)(TipoElemento este, TipoElemento otro));
+
+// ------------
+// Listas
+// ------------
+bool listas_eq(Lista real, Lista esperado);
+
+bool listas_eq_fn(Lista real, Lista esperado, bool (*compararTipoElemento)(TipoElemento este, TipoElemento otro),
+                  char *(*toStringTipoElemento)(TipoElemento te));
 
 #endif // ASSERT_H
