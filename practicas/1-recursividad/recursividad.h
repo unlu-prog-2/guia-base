@@ -16,12 +16,12 @@ int restoRecursivo(int dividendo, int divisor);
 
 char *agregarSeparadorMiles(char *numero);
 
-char* chinos(unsigned int nivel);
+char *chinos(unsigned int nivel);
 
-char* ondaDigital(char *);
+char *ondaDigital(char *);
 
 bool esDivisiblePor7(int n);
 
-int* explosion(int n, int b, int* size);
+int *explosion(int n, int b, int *size);
 
 #endif // RECURSIVIDAD_H
