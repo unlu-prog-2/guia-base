@@ -16,6 +16,14 @@ add_library(listas_cursores STATIC
         listas/listas_cursores.c
         )
 
+add_library(pilas_arreglos STATIC
+        pilas/pilas_arreglos.c
+        )
+
+add_library(pilas_punteros STATIC
+        pilas/pilas_punteros.c
+        )
+
 target_include_directories(tipo_elemento PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
         )
@@ -29,5 +37,13 @@ target_include_directories(listas_punteros PUBLIC
         )
 
 target_include_directories(listas_cursores PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+
+target_include_directories(pilas_arreglos PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+
+target_include_directories(pilas_punteros PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
         )
