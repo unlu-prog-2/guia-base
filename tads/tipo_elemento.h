@@ -24,4 +24,12 @@ TipoElemento te_crear(int clave);
  */
 TipoElemento te_crear_con_valor(int clave, void *valor);
 
+/**
+ * Devuelve una representación en cadena del TipoElemento especificado.
+ *
+ * @param te - el TipoElemento del cual se quiere obtener su representación en cadena.
+ * @return char * - una cadena que representa al TipoElemento especificado.
+ */
+char *toStringTipoElementoDefault(TipoElemento te);
+
 #endif // TIPO_ELEMENTO_H

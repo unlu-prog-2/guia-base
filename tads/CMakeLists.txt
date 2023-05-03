@@ -18,10 +18,12 @@ add_library(listas_cursores STATIC
 
 add_library(pilas_arreglos STATIC
         pilas/pilas_arreglos.c
+        pilas/util_pilas.c
         )
 
 add_library(pilas_punteros STATIC
         pilas/pilas_punteros.c
+        pilas/util_pilas.c
         )
 
 target_include_directories(tipo_elemento PUBLIC

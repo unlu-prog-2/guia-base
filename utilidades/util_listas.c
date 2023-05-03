@@ -14,12 +14,6 @@ Lista crear_lista_desde_array(int *vector, int tamano) {
     return l;
 }
 
-char *toStringTipoElementoDefault(TipoElemento te) {
-    char *cadena = (char *) malloc(sizeof(char) * 10);
-    sprintf(cadena, "%d", te->clave);
-    return cadena;
-}
-
 char *lista_como_string(Lista lista, char *(*toStringTipoElemento)(TipoElemento te)) {
     char *result = (char *) malloc(sizeof(char) * 3);
     strcpy(result, "[");
