@@ -7,6 +7,7 @@
 #include <tipo_elemento.h>
 #include "listas/listas.h"
 #include "pilas/pilas.h"
+#include "colas/colas.h"
 
 bool bool_eq(bool real, bool esperado);
 
@@ -74,6 +75,14 @@ bool listas_eq_fn(Lista real, Lista esperado, bool (*compararTipoElemento)(TipoE
 bool pilas_eq(Pila real, Pila esperado);
 
 bool pilas_eq_fn(Pila real, Pila esperado, bool (*compararTipoElemento)(TipoElemento este, TipoElemento otro),
+                 char *(*toStringTipoElemento)(TipoElemento te));
+
+// ------------
+// Colas
+// ------------
+bool colas_eq(Cola real, Cola esperado);
+
+bool colas_eq_fn(Cola real, Cola esperado, bool (*compararTipoElemento)(TipoElemento este, TipoElemento otro),
                  char *(*toStringTipoElemento)(TipoElemento te));
 
 #endif // ASSERT_H

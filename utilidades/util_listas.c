@@ -14,6 +14,16 @@ Lista crear_lista_desde_array(int *vector, int tamano) {
     return l;
 }
 
+void destruir_lista(Lista l) {
+    Iterador iter = iterador(l);
+    while (hay_siguiente(iter)) {
+        TipoElemento te = siguiente(iter);
+        free(te);
+    }
+    free(iter);
+    free(l);
+}
+
 char *lista_como_string(Lista lista, char *(*toStringTipoElemento)(TipoElemento te)) {
     char *result = (char *) malloc(sizeof(char) * 3);
     strcpy(result, "[");
@@ -30,8 +40,6 @@ char *lista_como_string(Lista lista, char *(*toStringTipoElemento)(TipoElemento 
         }
     }
     free(iter);
-
-    result[strlen(result) - 2] = ']';
-    result[strlen(result) - 1] = '\0';
+    strcat(result, "]");
     return result;
 }

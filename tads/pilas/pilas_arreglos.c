@@ -16,7 +16,7 @@ Pila p_crear() {
 }
 
 bool p_es_llena(Pila pila) {
-    return (pila->tope == TAMANIO_MAXIMO);
+    return pila->tope == TAMANIO_MAXIMO;
 }
 
 void p_apilar(Pila pila, TipoElemento elemento) {
