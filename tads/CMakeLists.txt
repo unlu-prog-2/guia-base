@@ -41,6 +41,14 @@ add_library(colas_arreglos_circular STATIC
         colas/util_colas.c
         )
 
+add_library(arboles STATIC
+        arboles/arbol-avl.c
+        arboles/arbol-binario.c
+        arboles/arbol-binario-busqueda.c
+        arboles/nodo.c
+        arboles/util_arboles.c
+        )
+
 target_include_directories(tipo_elemento PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
         )
@@ -70,6 +78,10 @@ target_include_directories(colas_arreglos PUBLIC
         )
 
 target_include_directories(colas_arreglos_circular PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+
+target_include_directories(arboles PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
         )
 

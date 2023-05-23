@@ -14,5 +14,6 @@ add_subdirectory(practicas/1-recursividad)
 add_subdirectory(practicas/2-listas)
 add_subdirectory(practicas/3-pilas)
 add_subdirectory(practicas/4-colas)
+add_subdirectory(practicas/5-arboles)
 
 enable_testing()

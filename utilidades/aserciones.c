@@ -186,6 +186,25 @@ bool int_array_eq(int *real, int *esperado, int longReal, int longEsperado) {
     return true;
 }
 
+// ------
+// Punteros
+// ------
+bool ptr_null(void *real) {
+    if (real != NULL) {
+        printf("%s Valor recibido '%p' NO es NULL.\n", ERROR, real);
+        return false;
+    }
+    return true;
+}
+
+bool ptr_not_null(void *real) {
+    if (real == NULL) {
+        printf("%s Valor recibido '%p' es NULL.\n", ERROR, real);
+        return false;
+    }
+    return true;
+}
+
 // ------------
 // TipoElemento
 // ------------
@@ -202,9 +221,6 @@ bool te_eq_valor(TipoElemento real, TipoElemento esperado,
     return compararTipoElemento(real, esperado);
 }
 
-// ------------
-// Listas
-// ------------
 bool listas_eq(Lista real, Lista esperado) {
     return listas_eq_fn(real, esperado, compararPorClaves, NULL);
 }
@@ -243,7 +259,6 @@ bool listas_eq_fn(Lista real, Lista esperado, bool (*compararTipoElemento)(TipoE
 
     return bIguales;
 }
-
 
 bool pilas_eq(Pila real, Pila esperado) {
     return pilas_eq_fn(real, esperado, compararPorClaves, NULL);
