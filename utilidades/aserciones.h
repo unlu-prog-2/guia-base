@@ -52,6 +52,13 @@ bool double_lte(double real, double esperado);
 // ------
 bool int_array_eq(int *real, int *esperado, int longReal, int longEsperado);
 
+// ------
+// Punteros
+// ------
+bool ptr_null(void *real);
+
+bool ptr_not_null(void *real);
+
 // ------------
 // TipoElemento
 // ------------
