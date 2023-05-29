@@ -9,6 +9,7 @@
 void test_operaciones_varias() {
     ArbolBinario arbol = a_crear();
     assert(bool_true(a_es_vacio(arbol)));
+    assert(int_eq(a_cantidad_elementos(arbol), 0));
 
     Iterador it = iterador_in_orden(a_raiz(arbol));
     assert(bool_false(hay_siguiente(it)));
@@ -31,7 +32,7 @@ void test_operaciones_varias() {
     a_conectar_hd(arbol, raiz, te_crear(3));
     a_conectar_hd(arbol, hi, te_crear(7));
     mostrar_arbol_binario_ascii(a_raiz(arbol));
-
+    assert(int_eq(a_cantidad_elementos(arbol), 4));
     assert(bool_false(a_es_vacio(arbol)));
 
     mostrar_arbol_binario(a_raiz(arbol), IN_ORDEN);
