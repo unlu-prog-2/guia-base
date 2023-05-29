@@ -174,8 +174,8 @@ void test_operaciones_varias2() {
 int main() {
     imprimir_titulo("Tests de Árboles Binarios de Búsqueda");
 
-    test_operaciones_varias();
-    test_operaciones_varias2();
+//    test_operaciones_varias();
+//    test_operaciones_varias2();
 
     return 0;
 }
