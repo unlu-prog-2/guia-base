@@ -49,6 +49,15 @@ add_library(arboles STATIC
         arboles/util_arboles.c
         )
 
+add_library(tablas_hash_lista_colisiones STATIC
+        tablas-hash/tablas-hash-lista-colisiones.c
+        )
+
+add_library(tablas_hash_zona_overflow STATIC
+        tablas-hash/tablas-hash-zona-overflow.c
+        )
+
+
 target_include_directories(tipo_elemento PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
         )
@@ -82,6 +91,15 @@ target_include_directories(colas_arreglos_circular PUBLIC
         )
 
 target_include_directories(arboles PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+
+
+target_include_directories(tablas_hash_lista_colisiones PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        )
+
+target_include_directories(tablas_hash_zona_overflow PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
         )
 
