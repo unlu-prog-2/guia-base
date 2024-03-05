@@ -57,6 +57,14 @@ add_library(tabla_hash_zona_overflow STATIC
         tabla-hash/tabla-hash-zona-overflow.c
 )
 
+add_library(conjuntos_listas STATIC
+        conjuntos/conjuntos-listas.c
+)
+
+add_library(conjuntos_avl STATIC
+        conjuntos/conjuntos-avl.c
+)
+
 
 target_include_directories(tipo_elemento PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
@@ -104,5 +112,13 @@ target_include_directories(tabla_hash_zona_overflow PUBLIC
 )
 
 target_include_directories(colas_punteros PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+target_include_directories(conjuntos_listas PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+target_include_directories(conjuntos_avl PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
 )
