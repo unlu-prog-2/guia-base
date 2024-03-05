@@ -1,6 +1,6 @@
 #include <assert.h>
 #include "aserciones.h"
-#include "../practica_tablas_hash.h"
+#include "../practica_tabla_hash.h"
 #include "arboles/arbol-avl.h"
 #include "cadenas.h"
 #include <time.h>
@@ -51,7 +51,7 @@ void experimento(const char *nombreArchivo, bool usarTH, TablaHash tabla_hash, A
 }
 
 int main() {
-    imprimir_titulo("Tests para comparar tablas hash con árboles AVL");
+    imprimir_titulo("Tests para comparar tabla hash con árboles AVL");
     srand(time(NULL)); // NOLINT(cert-msc51-cpp)
 
 //    char *nombreArchivo = "productos_10.dat";

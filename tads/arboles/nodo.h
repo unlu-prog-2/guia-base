@@ -1,25 +1,26 @@
 #ifndef NODO_H
 #define NODO_H
-#include "../tipo_elemento.h"
+
+#include "tipo_elemento.h"
 
 struct NodoArbolRep {
     TipoElemento datos;
     struct NodoArbolRep *hi;
     struct NodoArbolRep *hd;
-    int altura;
+    int fe;   //Factor de Equilibro de Cada nodo para el autobalanceo
 };
 typedef struct NodoArbolRep *NodoArbol;
 
 // retorna el hijo izquierdo
-NodoArbol hijo_izquierdo(NodoArbol nodo);
+NodoArbol n_hijo_izquierdo(NodoArbol nodo);
 
 // retorna el hijo derecho
-NodoArbol hijo_derecho(NodoArbol nodo);
+NodoArbol n_hijo_derecho(NodoArbol nodo);
 
 // Crea un Nodo y lo retorna
-NodoArbol crear_nodo_arbol(TipoElemento te);
+NodoArbol n_crear(TipoElemento te);
 
-// Retorna el dato guardado en un nodo
-TipoElemento recuperar_nodo_arbol(NodoArbol nodo);
+// Crea un Nodo y lo retorna
+TipoElemento n_recuperar(NodoArbol nodo);
 
 #endif // NODO_H

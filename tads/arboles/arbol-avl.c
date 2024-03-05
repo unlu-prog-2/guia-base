@@ -56,7 +56,7 @@ enum Balanceo avl_calcular_balanceo(NodoArbol nodo) {
 NodoArbol avl_insertar_recursivo(ArbolAVL a, TipoElemento te, NodoArbol pa) {
 }
 
-void avl_insertar(ArbolAVL a, TipoElemento te) {
+bool avl_insertar(ArbolAVL a, TipoElemento te) {
     a->raiz = avl_insertar_recursivo(a, te, avl_raiz(a));
 }
 
@@ -66,7 +66,7 @@ NodoArbol avl_buscar_minimo(NodoArbol nodoArbol) {
 NodoArbol avl_eliminar_recursivo(ArbolAVL arbol, NodoArbol nodoArbol, int claveABorrar) {
 }
 
-void avl_eliminar(ArbolAVL a, int claveABorrar) {
+bool avl_eliminar(ArbolAVL a, int claveABorrar) {
     a->raiz = avl_eliminar_recursivo(a, avl_raiz(a), claveABorrar);
 }
 
@@ -86,14 +86,14 @@ int avl_altura_izq(NodoArbol nodo) {
     if (nodo->hi == NULL) {
         return -1;
     }
-    return nodo->hi->altura;
+    return nodo->hi->fe;
 }
 
 int avl_altura_der(NodoArbol nodo) {
     if (nodo->hd == NULL) {
         return -1;
     }
-    return nodo->hd->altura;
+    return nodo->hd->fe;
 }
 
 int avl_max(int a, int b) {
@@ -112,8 +112,8 @@ NodoArbol avl_rotar_izquierda(NodoArbol nodo) {
     NodoArbol otro = nodo->hd;
     nodo->hd = otro->hi;
     otro->hi = nodo;
-    nodo->altura = avl_max(avl_altura_izq(nodo), avl_altura_der(nodo)) + 1;
-    otro->altura = avl_max(avl_altura_der(otro), nodo->altura) + 1;
+    nodo->fe = avl_max(avl_altura_izq(nodo), avl_altura_der(nodo)) + 1;
+    otro->fe = avl_max(avl_altura_der(otro), nodo->fe) + 1;
 
     return otro;
 }
@@ -130,8 +130,8 @@ NodoArbol avl_rotar_derecha(NodoArbol nodo) {
     NodoArbol otro = nodo->hi;
     nodo->hi = otro->hd;
     otro->hd = nodo;
-    nodo->altura = avl_max(avl_altura_izq(nodo), avl_altura_der(nodo)) + 1;
-    otro->altura = avl_max(avl_altura_izq(otro), nodo->altura) + 1;
+    nodo->fe = avl_max(avl_altura_izq(nodo), avl_altura_der(nodo)) + 1;
+    otro->fe = avl_max(avl_altura_izq(otro), nodo->fe) + 1;
 
     return otro;
 }

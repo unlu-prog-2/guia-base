@@ -22,7 +22,7 @@ NodoArbol abb_raiz(ArbolBinarioBusqueda a) {
 NodoArbol abb_insertar_recursivo(ArbolBinarioBusqueda a, NodoArbol pa, TipoElemento te) {
 }
 
-void abb_insertar(ArbolBinarioBusqueda a, TipoElemento te) {
+bool abb_insertar(ArbolBinarioBusqueda a, TipoElemento te) {
     abb_insertar_recursivo(a, abb_raiz(a), te);
 }
 
@@ -38,7 +38,7 @@ NodoArbol abb_buscar_minimo(NodoArbol nodoArbol) {
 NodoArbol abb_eliminar_recursivo(ArbolBinarioBusqueda arbol, NodoArbol root, int claveABorrar) {
 }
 
-void abb_eliminar(ArbolBinarioBusqueda a, int claveABorrar) {
+bool abb_eliminar(ArbolBinarioBusqueda a, int claveABorrar) {
     a->raiz = abb_eliminar_recursivo(a, abb_raiz(a), claveABorrar);
 }
 

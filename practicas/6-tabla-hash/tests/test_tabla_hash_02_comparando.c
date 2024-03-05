@@ -1,6 +1,6 @@
 #include <assert.h>
 #include "aserciones.h"
-#include "../practica_tablas_hash.h"
+#include "../practica_tabla_hash.h"
 #include "cadenas.h"
 
 int hash_modulo(int k) {
@@ -8,7 +8,7 @@ int hash_modulo(int k) {
 }
 
 int main() {
-    imprimir_titulo("Tests para comparar tablas hash");
+    imprimir_titulo("Tests para comparar tabla hash");
 
 //    TablaHash tabla = th_crear(10, hash_modulo);
 //    th_mostrar(tabla);

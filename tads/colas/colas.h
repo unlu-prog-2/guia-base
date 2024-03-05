@@ -20,7 +20,7 @@ Cola c_crear();
  * @param cola una instancia de tipo Cola.
  * @param elemento El elemento a agregar.
 */
-void c_encolar(Cola cola, TipoElemento elemento);
+bool c_encolar(Cola cola, TipoElemento elemento);
 
 /**
  * Desencola y devuelve el elemento del frente de la cola.
@@ -37,6 +37,8 @@ TipoElemento c_desencolar(Cola cola);
  * @return true si la cola está vacía, false de lo contrario.
 */
 bool c_es_vacia(Cola cola);
+
+bool c_es_llena(Cola cola);
 
 /**
  * Devuelve el elemento del frente de la cola sin desencolarlo.

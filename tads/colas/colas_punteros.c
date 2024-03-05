@@ -17,7 +17,7 @@ struct ColaRep {
 //-----------------------------------------------------------
 // Rutina interna que calcula los elementos de la pila
 //-----------------------------------------------------------
-int longitud(Cola cola) {
+int c_longitud(Cola cola) {
     int i = 0;
     struct Nodo *nodo = cola->frente;
     while (nodo != NULL) {
@@ -28,7 +28,7 @@ int longitud(Cola cola) {
 }
 
 char *c_to_string(Cola cola) {
-    int cantidad = longitud(cola);
+    int cantidad = c_longitud(cola);
 
     char *resultado = (char *) malloc(sizeof(char) * (cantidad * 10 + 3));
     strcpy(resultado, "[");

@@ -3,7 +3,7 @@
 #include "nodo.h"
 
 // retorna el hijo izquierdo
-NodoArbol hijo_izquierdo(NodoArbol nodo) {
+NodoArbol n_hijo_izquierdo(NodoArbol nodo) {
     if (nodo == NULL) {
         return NULL;
     } else {
@@ -12,7 +12,7 @@ NodoArbol hijo_izquierdo(NodoArbol nodo) {
 };
 
 // retorna el hijo derecho
-NodoArbol hijo_derecho(NodoArbol nodo) {
+NodoArbol n_hijo_derecho(NodoArbol nodo) {
     if (nodo == NULL) {
         return NULL;
     } else {
@@ -21,17 +21,17 @@ NodoArbol hijo_derecho(NodoArbol nodo) {
 };
 
 // Crea el Nodo y lo retorna
-NodoArbol crear_nodo_arbol(TipoElemento te) {
+NodoArbol n_crear(TipoElemento te) {
     NodoArbol na = (NodoArbol) malloc(sizeof(struct NodoArbolRep));
     na->datos = te;
     na->hi = NULL;
     na->hd = NULL;
-    na->altura = 0;
+    na->fe = 0;
     return na;
 };
 
 // retorno el tipo elemento de un nodo o NULL si no existe
-TipoElemento recuperar_nodo_arbol(NodoArbol nodo) {
+TipoElemento n_recuperar(NodoArbol nodo) {
     if (nodo == NULL) {
         return NULL;
     }

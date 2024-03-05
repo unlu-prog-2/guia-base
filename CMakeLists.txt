@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.24)
-project(guia-2023-base C)
+project(guia-2024-base C)
 
 set(CMAKE_C_STANDARD 11)
 
@@ -15,6 +15,6 @@ add_subdirectory(practicas/2-listas)
 add_subdirectory(practicas/3-pilas)
 add_subdirectory(practicas/4-colas)
 add_subdirectory(practicas/5-arboles)
-add_subdirectory(practicas/6-tablas-hash)
+add_subdirectory(practicas/6-tabla-hash)
 
 enable_testing()

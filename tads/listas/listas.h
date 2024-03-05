@@ -2,7 +2,7 @@
 #define LISTAS_H
 
 #include <stdbool.h>
-#include "../tipo_elemento.h"
+#include "tipo_elemento.h"
 
 struct ListaRep;
 typedef struct ListaRep *Lista;
@@ -26,6 +26,13 @@ Lista l_crear();
 bool l_es_vacia(Lista lista);
 
 /**
+ * Comprueba si la lista recibida como parámetro está llena.
+ * @param lista - una instancia de tipo Lista.
+ * @return bool - true si la lista está llena, false en caso contrario.
+ */
+bool l_es_llena(Lista lista);
+
+/**
  * Devuelve la cantidad de elementos que contiene la lista recibida como parámetro.
  *
  * @param lista - una instancia de tipo Lista.
@@ -39,7 +46,7 @@ int l_longitud(Lista lista);
  * @param lista - una instancia de tipo Lista.
  * @param elemento - el elemento a agregar a la lista.
  */
-void l_agregar(Lista lista, TipoElemento elemento);
+bool l_agregar(Lista lista, TipoElemento elemento);
 
 /**
  * Elimina el elemento con la clave especificada de la lista recibida como parámetro.
@@ -47,7 +54,7 @@ void l_agregar(Lista lista, TipoElemento elemento);
  * @param lista - una instancia de tipo Lista.
  * @param clave - la clave del elemento a eliminar.
  */
-void l_borrar(Lista lista, int clave);
+bool l_borrar(Lista lista, int clave);
 
 /**
  * Busca el elemento con la clave especificada en la lista recibida como parámetro y lo devuelve.
@@ -65,7 +72,7 @@ TipoElemento l_buscar(Lista lista, int clave);
  * @param elemento - el elemento a insertar en la lista.
  * @param pos - la posición en la que se insertará el elemento.
  */
-void l_insertar(Lista lista, TipoElemento elemento, int pos);
+bool l_insertar(Lista lista, TipoElemento elemento, int pos);
 
 /**
  * Elimina el elemento en la posición especificada de la lista recibida como parámetro.
@@ -73,7 +80,7 @@ void l_insertar(Lista lista, TipoElemento elemento, int pos);
  * @param lista - una instancia de tipo Lista.
  * @param pos - la posición del elemento a eliminar.
  */
-void l_eliminar(Lista lista, int pos);
+bool l_eliminar(Lista lista, int pos);
 
 /**
  * Recupera el elemento en la posición especificada de la lista recibida como parámetro y lo devuelve.

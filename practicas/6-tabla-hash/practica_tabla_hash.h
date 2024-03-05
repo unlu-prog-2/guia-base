@@ -1,7 +1,7 @@
-#ifndef PRACTICA_TABLAS_HASH_H
-#define PRACTICA_TABLAS_HASH_H
+#ifndef PRACTICA_TABLA_HASH_H
+#define PRACTICA_TABLA_HASH_H
 
-#include "tablas-hash/tablas-hash.h"
+#include "tabla-hash/tabla-hash.h"
 #include "arboles/arbol-avl.h"
 
 void generarRegistrosYGuardarEnArchivo(char *nombreArchivo, int cantidad);
@@ -15,4 +15,4 @@ struct Registro {
     int stock;
 };
 
-#endif // PRACTICA_TABLAS_HASH_H
+#endif // PRACTICA_TABLA_HASH_H

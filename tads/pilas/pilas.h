@@ -10,7 +10,7 @@ typedef struct PilaRep *Pila;
 /**
  * Crea una nueva pila vacía.
  *
- * @return una nueva instancia de pila vacía.
+ * @return Pila - una nueva instancia de pila vacía.
  */
 Pila p_crear();
 
@@ -20,34 +20,42 @@ Pila p_crear();
  * @param pila - una instancia de tipo Pila.
  * @param elemento - el elemento a agregar a la pila.
  */
-void p_apilar(Pila pila, TipoElemento elemento);
+bool p_apilar(Pila pila, TipoElemento elemento);
 
 /**
  * Remueve y devuelve el elemento en la cima de la pila recibida como parámetro.
  *
  * @param pila - una instancia de tipo Pila.
- * @return el elemento que se encontraba en la cima de la pila.
+ * @return TipoElemento - el elemento que se encontraba en la cima de la pila.
  */
 TipoElemento p_desapilar(Pila pila);
-
-/**
- * Comprueba si la pila recibida como parámetro está vacía.
- *
- * @param pila - una instancia de tipo Pila.
- * @return true si la pila está vacía, false en caso contrario.
- */
-bool p_es_vacia(Pila pila);
 
 /**
  * Devuelve el elemento en la cima de la pila recibida como parámetro sin removerlo.
  *
  * @param pila - una instancia de tipo Pila.
- * @return el elemento en la cima de la pila.
+ * @return TipoElemento - el elemento en la cima de la pila.
  */
 TipoElemento p_tope(Pila pila);
 
 /**
- * Muestra en consola los elementos de la pila recibida como parámetro.
+ * Comprueba si la pila recibida como parámetro está vacía.
+ *
+ * @param pila - una instancia de tipo Pila.
+ * @return bool - true si la pila está vacía, false en caso contrario.
+ */
+bool p_es_vacia(Pila pila);
+
+/**
+ * Comprueba si la pila recibida como parámetro está llena.
+ *
+ * @param pila - una instancia de tipo Pila.
+ * @return bool - true si la pila está llena, false en caso contrario.
+ */
+bool p_es_llena(Pila pila);
+
+/**
+ * Muestra por pantalla los elementos de la pila recibida como parámetro.
  *
  * @param pila - una instancia de tipo Pila.
  */

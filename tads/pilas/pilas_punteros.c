@@ -17,7 +17,7 @@ struct PilaRep {
 Pila p_crear() {
 }
 
-void p_apilar(Pila pila, TipoElemento elemento) {
+bool p_apilar(Pila pila, TipoElemento elemento) {
 }
 
 TipoElemento p_desapilar(Pila pila) {

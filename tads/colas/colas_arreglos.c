@@ -19,7 +19,7 @@ bool c_es_llena(Cola cola) {
     return cola->final == TAMANIO_MAXIMO;
 }
 
-void c_encolar(Cola cola, TipoElemento elemento) {
+bool c_encolar(Cola cola, TipoElemento elemento) {
 }
 
 TipoElemento c_desencolar(Cola cola) {

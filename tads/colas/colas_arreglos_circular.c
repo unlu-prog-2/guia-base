@@ -16,7 +16,7 @@ struct ColaRep {
 int paso(int posicion);
 
 /** Función interna que calcula la cantidad de elementos de la cola */
-int longitud(Cola cola);
+int c_longitud(Cola cola);
 
 /** Función interna que dice si hay lugar para almacenar más elementos o no */
 bool c_es_llena(Cola cola);
@@ -32,7 +32,7 @@ bool c_es_llena(Cola cola) {
     return paso(paso(cola->final)) == cola->frente;
 }
 
-int longitud(Cola cola) {
+int c_longitud(Cola cola) {
     int i = 0;
     int pos = cola->frente;
     while (pos != cola->final) {
@@ -43,7 +43,7 @@ int longitud(Cola cola) {
 }
 
 char *c_to_string(Cola cola) {
-    char *resultado = (char *) malloc(sizeof(char) * (longitud(cola) * 10 + 3));
+    char *resultado = (char *) malloc(sizeof(char) * (c_longitud(cola) * 10 + 3));
     strcpy(resultado, "[");
     for (int i = cola->frente; i <= cola->final; i = paso(i)) {
         char num_str[10];

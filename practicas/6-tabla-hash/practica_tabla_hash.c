@@ -3,7 +3,7 @@
 #include <string.h>
 #include <assert.h>
 
-#include "practica_tablas_hash.h"
+#include "practica_tabla_hash.h"
 
 /**
  * Genera un archivo con registros aleatorios según la

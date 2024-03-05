@@ -38,10 +38,9 @@ float promedioDePartidosJugados(struct Jugador equipo[CANT_JUGADORES], int edad)
 #define CANT_DEPARTAMENTOS 5
 
 typedef struct ViviendaRep {
-    int piso;
+    short piso;
     char depto;
 } Vivienda;
-
 
 int pisoConMasHabitantes(int edificio[CANT_PISOS][CANT_DEPARTAMENTOS]);
 
@@ -51,7 +50,21 @@ float promedioHabitantesPorVivienda(int edificio[CANT_PISOS][CANT_DEPARTAMENTOS]
 
 Vivienda viviendaConMasHabitantes(int edificio[CANT_PISOS][CANT_DEPARTAMENTOS]);
 
-// Viviendas viviendasVacias(int edificio[CANT_PISOS][CANT_DEPARTAMENTOS]);
+void cantidadDeViviendasVaciasPorPiso(int edificio[CANT_PISOS][CANT_DEPARTAMENTOS], int vaciasPorPiso[CANT_PISOS]);
 
+void viviendasVacias(int edificio[CANT_PISOS][CANT_DEPARTAMENTOS],
+                     Vivienda viviendasVacias[CANT_PISOS * CANT_DEPARTAMENTOS]);
+
+
+#define CANT_MAX_ANIOS 100
+#define CANT_MAX_CLIENTES 10000
+#define ANIO_INICIO 2013
+
+struct Cliente {
+    int id;
+    int totalesPorAnio[CANT_MAX_ANIOS];
+};
+
+void procesarArchivo(const char *nombreArchivo);
 
 #endif // REPASO_H

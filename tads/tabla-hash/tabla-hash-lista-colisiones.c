@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-#include "tablas-hash.h"
+#include "tabla-hash.h"
 #include "../listas/listas.h"
 
 struct TipoRegistroTabla {
@@ -21,10 +21,10 @@ struct TablaHashRep {
 TablaHash th_crear(int capacidad, int (*hash_function)(int)) {
 }
 
-void th_insertar(TablaHash th, TipoElemento te) {
+bool th_insertar(TablaHash th, TipoElemento te) {
 }
 
-void th_eliminar(TablaHash th, int clave) {
+bool th_eliminar(TablaHash th, int clave) {
 }
 
 TipoElemento th_recuperar(TablaHash th, int clave) {
