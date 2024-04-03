@@ -13,7 +13,7 @@ int hash_modulo(int k) {
 }
 
 int codigoAleatorio() {
-    return rand() % 9000000 + 1000000; // NOLINT(cert-msc50-cpp)
+    return rand() % 9000000 + 1000000;
 }
 
 void experimento(const char *nombreArchivo, bool usarTH, TablaHash tabla_hash, ArbolAVL arbol, int iteraciones) {
@@ -51,8 +51,8 @@ void experimento(const char *nombreArchivo, bool usarTH, TablaHash tabla_hash, A
 }
 
 int main() {
+    srand(time(NULL));
     imprimir_titulo("Tests para comparar tabla hash con árboles AVL");
-    srand(time(NULL)); // NOLINT(cert-msc51-cpp)
 
 //    char *nombreArchivo = "productos_10.dat";
 //    char *nombreArchivo = "productos_100.dat";
