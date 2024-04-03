@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <time.h>
 #include "aserciones.h"
 #include "../practica_tabla_hash.h"
 #include "cadenas.h"
@@ -8,6 +9,7 @@ int hash_modulo(int k) {
 }
 
 int main() {
+    srand(time(NULL));
     imprimir_titulo("Tests para comparar tabla hash");
 
 //    TablaHash tabla = th_crear(10, hash_modulo);

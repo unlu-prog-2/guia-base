@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
+#include <time.h>
 
 #include "practica_tabla_hash.h"
 
@@ -18,7 +19,7 @@ void generarRegistrosYGuardarEnArchivo(char *nombreArchivo, int cantidad) {
     struct Registro registro;
     int i = 0;
     while (i < cantidad) {
-        int codigo = (int) random() % 9000000 + 1000000;
+        int codigo = rand() % 9000000 + 1000000;
         if (avl_buscar(arbol, codigo) != NULL) {
             continue;  // Número repetido, seguir probando
         }
@@ -26,8 +27,8 @@ void generarRegistrosYGuardarEnArchivo(char *nombreArchivo, int cantidad) {
 
         registro.codigo = codigo;
         sprintf(registro.detalle, "Producto %i", codigo);
-        registro.precio = (int) random() % 1000 * 100;
-        registro.stock = (int) random() % 100;
+        registro.precio = rand() % 1000 * 100;
+        registro.stock = rand() % 100;
         fwrite(&registro, sizeof(struct Registro), 1, archivo);
 
         i++;
