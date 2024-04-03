@@ -1,4 +1,3 @@
-#include <printf.h>
 #include <assert.h>
 
 #include "colas/util_colas.h"
