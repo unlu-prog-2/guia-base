@@ -3,29 +3,31 @@
 
 #include <stdbool.h>
 
-struct NRacional {
+struct NumeroRacional {
     int numerador;
     int denominador;
 };
 
-bool nRacional_inicializar(int numerador, int denominador, struct NRacional *numero);
+bool nr_inicializar(int numerador, int denominador, struct NumeroRacional *numeroRacional);
 
-void nRacional_simplificar(struct NRacional *f1);
+void nr_simplificar(struct NumeroRacional *numeroRacional);
 
-struct nRacional nRacional_sumar(struct NRacional f1, struct NRacional f2);
+struct NumeroRacional nr_sumar(struct NumeroRacional f1, struct NumeroRacional f2);
 
-struct nRacional nRacional_restar(struct NRacional f1, struct NRacional f2);
+struct NumeroRacional nr_restar(struct NumeroRacional f1, struct NumeroRacional f2);
 
-struct nRacional nRacional_multiplicar(struct NRacional f1, struct NRacional f2);
+struct NumeroRacional nr_multiplicar(struct NumeroRacional f1, struct NumeroRacional f2);
 
-struct nRacional nRacional_dividir(struct NRacional f1, struct NRacional f2);
+struct NumeroRacional nr_dividir(struct NumeroRacional f1, struct NumeroRacional f2);
 
-struct nRacional nRacional_potencia(struct NRacional f1, struct NRacional f2);
-
-enum COMPARACION {
+enum NRComparacion {
     MAYOR, MENOR, IGUAL
 };
 
-enum COMPARACION nRacional_comparar(struct NRacional f1, struct NRacional f2);
+enum NRComparacion nr_comparar(struct NumeroRacional f1, struct NumeroRacional f2);
+
+char *comparacion_to_string(enum NRComparacion comparacion);
+
+char *nr_to_string(struct NumeroRacional numeroRacional);
 
 #endif //NUMERO_RACIONAL_H

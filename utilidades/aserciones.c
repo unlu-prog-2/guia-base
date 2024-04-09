@@ -46,6 +46,16 @@ bool str_eq(char *real, char *esperado) {
     return true;
 }
 
+bool enum_eq(int real, int esperado, char *(*toStringEnum)(int enumerado)) {
+    if (real != esperado) {
+        char *strReal = toStringEnum(real);
+        char *strEsperado = toStringEnum(esperado);
+        printf("%s Valor recibido '%s' es distinto al esperado '%s'.\n", ERROR, strReal, strEsperado);
+        return false;
+    }
+    return true;
+}
+
 bool int_eq(int real, int esperado) {
     if (real != esperado) {
         printf("%s Valor recibido '%d' es distinto al esperado '%d'.\n", ERROR, real, esperado);

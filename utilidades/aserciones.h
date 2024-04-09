@@ -17,6 +17,8 @@ bool bool_false(bool real);
 
 bool str_eq(char *real, char *esperado);
 
+bool enum_eq(int real, int esperado, char *(*toStringEnum)(int enumerado));
+
 bool int_eq(int real, int esperado);
 
 bool int_gt(int real, int esperado);

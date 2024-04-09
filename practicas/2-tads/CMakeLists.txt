@@ -3,16 +3,20 @@ project(TiposAbstractosDeDatos)
 enable_testing()
 
 add_library(numero-racional numero-racional.c)
+add_library(fecha-juliano fecha-juliano.c)
+add_library(fecha-struct fecha-struct.c)
 
 # Buscar todos los archivos de prueba que comiencen con "test_" en la carpeta "tests"
 file(GLOB TEST_SOURCES "tests/test_*.c")
 
-foreach (TEST_SOURCE ${TEST_SOURCES})
-    # Extraer el nombre del archivo de prueba (sin extensión)
-    get_filename_component(TEST_NAME ${TEST_SOURCE} NAME_WE)
+add_executable(test_numero_racional tests/test_racional.c)
+target_link_libraries(test_numero_racional numero-racional utilidades)
+add_test(NAME test_numero_racional COMMAND test_numero_racional)
 
-    # Agregar un ejecutable para cada archivo de prueba encontrado
-    add_executable(${TEST_NAME} ${TEST_SOURCE})
-    target_link_libraries(${TEST_NAME} numero-racional utilidades)
-    add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
-endforeach ()
+#add_executable(test_fecha_struct tests/test_fecha.c)
+#target_link_libraries(test_fecha_struct fecha-struct utilidades)
+#add_test(NAME test_fecha_struct COMMAND test_fecha_struct)
+
+add_executable(test_fecha_juliano tests/test_fecha.c)
+target_link_libraries(test_fecha_juliano fecha-juliano utilidades m)
+add_test(NAME test_fecha_juliano COMMAND test_fecha_juliano)
