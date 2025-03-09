@@ -20,6 +20,6 @@ foreach (TEST_SOURCE ${TEST_SOURCES})
 
     # Agregar un ejecutable para cada archivo de prueba encontrado
     add_executable(${TEST_NAME} ${TEST_SOURCE})
-    target_link_libraries(${TEST_NAME} repaso utilidades m)
+    target_link_libraries(${TEST_NAME} repaso aserciones cadenas m)
     add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
 endforeach ()

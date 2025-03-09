@@ -1,11 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
-#include <assert.h>
-
 #include "practica_pilas.h"
-#include "tipo_elemento.h"
+#include "tipo_elemento/tipo_elemento.h"
 #include "pilas/pilas.h"
 
 
@@ -30,7 +24,7 @@ int contarElementos(Pila p) {
 bool compararPilas(Pila p1, Pila p2) {
 }
 
-char* cambioDeBase(int numero, int base) {
+char *cambioDeBase(int numero, int base) {
 }
 
 Pila invertirPila(Pila p) {

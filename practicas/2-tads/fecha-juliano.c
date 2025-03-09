@@ -9,8 +9,7 @@ struct FechaRep {
 
 const unsigned short dias_por_mes[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-Fecha fecha_inicializar(unsigned short dia, unsigned short mes, unsigned int anio) {
-
+Fecha fecha_inicializar(const unsigned short dia, const unsigned short mes, const unsigned int anio) {
 }
 
 void fecha_desde_juliano(double juliano, unsigned short *dia, unsigned short *mes, unsigned int *anio);
@@ -36,31 +35,31 @@ enum FechaComparacion fecha_comparar(Fecha f1, Fecha f2) {
 bool fecha_en_bisiesto(Fecha fecha) {
 }
 
-char* meses[] = {
-        "Enero",
-        "Febrero",
-        "Marzo",
-        "Abril",
-        "Mayo",
-        "Junio",
-        "Julio",
-        "Agosto",
-        "Septiembre",
-        "Octubre",
-        "Noviembre",
-        "Diciembre"
+char *meses[] = {
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre"
 };
 
 char *fecha_nombre_mes(Fecha fecha) {
 }
 
-char *fecha_comparacion_to_string(enum FechaComparacion comparacion) {
+char *fecha_comparacion_to_string(const enum FechaComparacion comparacion) {
 }
 
 char *fecha_to_string(Fecha fecha) {
-    unsigned short dia = fecha_dia(fecha);
-    unsigned short mes = fecha_mes(fecha);
-    unsigned int anio = fecha_anio(fecha);
+    const unsigned short dia = fecha_dia(fecha);
+    const unsigned short mes = fecha_mes(fecha);
+    const unsigned int anio = fecha_anio(fecha);
     char *str = (char *) malloc(11 * sizeof(char));
     sprintf(str, "%02d/%02d/%04d", dia, mes, anio);
     return str;

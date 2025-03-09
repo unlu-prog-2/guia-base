@@ -1,4 +1,4 @@
-project(TablaHash)
+project(TablasHash)
 
 # Habilitar la opción Werror
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror")
@@ -16,11 +16,11 @@ endforeach ()
 file(GLOB TEST_SOURCES "tests/test_*.c")
 
 foreach (IMPLEMENTACION lista_colisiones zona_overflow)
-    add_library(practica_tabla_hash_${IMPLEMENTACION} practica_tabla_hash.c)
-    target_link_libraries(practica_tabla_hash_${IMPLEMENTACION} tabla_hash_${IMPLEMENTACION})
+    add_library(practica_tablas_hash_${IMPLEMENTACION} practica_tablas_hash.c)
+    target_link_libraries(practica_tablas_hash_${IMPLEMENTACION} tablas_hash_${IMPLEMENTACION})
 
-    add_executable(tabla_hash_${IMPLEMENTACION}_vs_arboles_avl tests/tabla_hash_vs_arboles_avl.c)
-    target_link_libraries(tabla_hash_${IMPLEMENTACION}_vs_arboles_avl practica_tabla_hash_${IMPLEMENTACION} tabla_hash_${IMPLEMENTACION} arboles utilidades m)
+    add_executable(tablas_hash_${IMPLEMENTACION}_vs_arboles_avl tests/tablas_hash_vs_arboles_avl.c)
+    target_link_libraries(tablas_hash_${IMPLEMENTACION}_vs_arboles_avl practica_tablas_hash_${IMPLEMENTACION} tablas_hash_${IMPLEMENTACION} arboles listas_punteros aserciones cadenas m)
 
     foreach (TEST_SOURCE ${TEST_SOURCES})
         # Extraer el nombre del archivo de prueba (sin extensión)
@@ -28,7 +28,7 @@ foreach (IMPLEMENTACION lista_colisiones zona_overflow)
 
         # Agregar un ejecutable para cada archivo de prueba encontrado
         add_executable(${TEST_NAME}_${IMPLEMENTACION} ${TEST_SOURCE})
-        target_link_libraries(${TEST_NAME}_${IMPLEMENTACION} practica_tabla_hash_${IMPLEMENTACION} tabla_hash_${IMPLEMENTACION} arboles utilidades m)
+        target_link_libraries(${TEST_NAME}_${IMPLEMENTACION} practica_tablas_hash_${IMPLEMENTACION} tablas_hash_${IMPLEMENTACION} arboles listas_punteros aserciones cadenas m)
         add_test(NAME ${TEST_NAME}_${IMPLEMENTACION} COMMAND ${TEST_NAME}_${IMPLEMENTACION})
     endforeach ()
 endforeach ()

@@ -18,7 +18,7 @@ foreach (IMPLEMENTACION listas avl)
 
         # Agregar un ejecutable para cada archivo de prueba encontrado
         add_executable(${TEST_NAME}_${IMPLEMENTACION} ${TEST_SOURCE})
-        target_link_libraries(${TEST_NAME}_${IMPLEMENTACION} practica_conjuntos_${IMPLEMENTACION} conjuntos_${IMPLEMENTACION} utilidades m)
+        target_link_libraries(${TEST_NAME}_${IMPLEMENTACION} practica_conjuntos_${IMPLEMENTACION} conjuntos_${IMPLEMENTACION} aserciones cadenas m)
         add_test(NAME ${TEST_NAME}_${IMPLEMENTACION} COMMAND ${TEST_NAME}_${IMPLEMENTACION})
     endforeach ()
 endforeach ()

@@ -1,14 +1,12 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "../practica_listas.h"
 
-#include "tipo_elemento.h"
-#include "listas/listas.h"
+#include "../practica_listas.h"
 #include "cadenas.h"
 #include "aserciones.h"
-#include "util_listas.h"
-
+#include "listas/util_listas.h"
+#include "listas/aserciones_listas.h"
 
 bool compararPuntoXY(TipoElemento este, TipoElemento otro) {
     struct PuntoXY *estePunto = (struct PuntoXY *) este->valor;
@@ -31,7 +29,6 @@ Lista crear_lista_puntos_desde_array(struct PuntoXY puntos[], int tamano) {
 
     return lista;
 }
-
 
 int main() {
     imprimir_titulo("Tests para polinomio");

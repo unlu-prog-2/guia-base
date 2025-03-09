@@ -15,7 +15,7 @@ foreach (IMPLEMENTACION arreglos punteros cursores)
 
         # Agregar un ejecutable para cada archivo de prueba encontrado
         add_executable(${TEST_NAME}_${IMPLEMENTACION} ${TEST_SOURCE})
-        target_link_libraries(${TEST_NAME}_${IMPLEMENTACION} practica_listas_${IMPLEMENTACION} listas_${IMPLEMENTACION} utilidades m)
+        target_link_libraries(${TEST_NAME}_${IMPLEMENTACION} practica_listas_${IMPLEMENTACION} listas_${IMPLEMENTACION} aserciones_listas aserciones cadenas m)
         add_test(NAME ${TEST_NAME}_${IMPLEMENTACION} COMMAND ${TEST_NAME}_${IMPLEMENTACION})
     endforeach ()
 endforeach ()

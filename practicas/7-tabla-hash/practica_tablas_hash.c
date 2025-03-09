@@ -4,13 +4,13 @@
 #include <assert.h>
 #include <time.h>
 
-#include "practica_tabla_hash.h"
+#include "practica_tablas_hash.h"
 
 /**
  * Genera un archivo con registros aleatorios según la
  * cantidad solicitada (sin repetir el código).
  */
-void generarRegistrosYGuardarEnArchivo(char *nombreArchivo, int cantidad) {
+void generarRegistrosYGuardarEnArchivo(const char *nombreArchivo, int cantidad) {
     FILE *archivo = fopen(nombreArchivo, "wb");
     assert(archivo != NULL);
 
@@ -40,7 +40,7 @@ void generarRegistrosYGuardarEnArchivo(char *nombreArchivo, int cantidad) {
 /**
  * Lee el archivo indicado y carga cada registro leído en una tabla hash y un árbol AVL.
  */
-void leerArchivoYCargarEstructuras(char *nombreArchivo, TablaHash tablaHash, ArbolAVL arbol) {
+void leerArchivoYCargarEstructuras(const char *nombreArchivo, TablaHash tablaHash, ArbolAVL arbol) {
     FILE *archivo = fopen(nombreArchivo, "rb");
     assert(archivo != NULL);
 

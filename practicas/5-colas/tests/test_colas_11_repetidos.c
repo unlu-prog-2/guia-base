@@ -1,12 +1,12 @@
-#include <assert.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "colas/util_colas.h"
 #include "pilas/util_pilas.h"
 #include "../practica_colas.h"
 #include "cadenas.h"
 #include "aserciones.h"
-#include "util_listas.h"
+#include "listas/util_listas.h"
 
 
 bool compararRepetido(TipoElemento este, TipoElemento otro) {

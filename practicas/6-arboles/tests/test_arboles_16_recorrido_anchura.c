@@ -1,7 +1,8 @@
 #include <assert.h>
-#include "aserciones.h"
 #include "../practica_arboles.h"
 #include "arboles/util_arboles.h"
+#include "listas/util_listas.h"
+#include "listas/aserciones_listas.h"
 #include "cadenas.h"
 
 int main() {

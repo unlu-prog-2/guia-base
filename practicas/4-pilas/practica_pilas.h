@@ -17,7 +17,7 @@ int contarElementos(Pila p);
 
 bool compararPilas(Pila p1, Pila p2);
 
-char* cambioDeBase(int numero, int base);
+char *cambioDeBase(int numero, int base);
 
 Pila invertirPila(Pila p);
 

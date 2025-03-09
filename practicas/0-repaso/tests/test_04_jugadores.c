@@ -8,7 +8,6 @@
 
 int main() {
     imprimir_titulo("Tests de Ejercicio 4");
-
     struct Jugador equipo[CANT_JUGADORES] = {
             {"Messi",       34, 800},
             {"Ronaldo",     37, 900},

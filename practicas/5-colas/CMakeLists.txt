@@ -1,8 +1,5 @@
 project(Colas)
 
-# Habilitar la opción Werror
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror")
-
 enable_testing()
 
 # Buscar todos los archivos de prueba que comiencen con "test_" en la carpeta "tests"
@@ -18,7 +15,11 @@ foreach (IMPLEMENTACION arreglos arreglos_circular punteros)
 
         # Agregar un ejecutable para cada archivo de prueba encontrado
         add_executable(${TEST_NAME}_${IMPLEMENTACION} ${TEST_SOURCE})
-        target_link_libraries(${TEST_NAME}_${IMPLEMENTACION} practica_colas_${IMPLEMENTACION} colas_${IMPLEMENTACION} utilidades m)
+        if(${IMPLEMENTACION} STREQUAL "arreglos_circular")
+            target_link_libraries(${TEST_NAME}_${IMPLEMENTACION} practica_colas_${IMPLEMENTACION} colas_${IMPLEMENTACION} aserciones_colas listas_punteros pilas_punteros aserciones cadenas m)
+        else()
+            target_link_libraries(${TEST_NAME}_${IMPLEMENTACION} practica_colas_${IMPLEMENTACION} colas_${IMPLEMENTACION} aserciones_colas listas_punteros pilas_punteros aserciones cadenas m)
+        endif()
         add_test(NAME ${TEST_NAME}_${IMPLEMENTACION} COMMAND ${TEST_NAME}_${IMPLEMENTACION})
     endforeach ()
 endforeach ()

@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <stdio.h>
 
 #include "aserciones.h"
 #include "cadenas.h"
@@ -52,49 +53,49 @@ void probar_dividir(struct NumeroRacional f1, struct NumeroRacional f2, struct N
 int main() {
     imprimir_titulo("Tests para Número Racional");
 
-//    struct NumeroRacional nr;
-//    assert(bool_true(nr_inicializar(3, 5, &nr)));
-//    assert(int_eq(nr.numerador, 3));
-//    assert(int_eq(nr.denominador, 5));
-//
-//    assert(bool_false(nr_inicializar(3, 0, &nr)));
-//    assert(int_eq(nr.numerador, 3));
-//    assert(int_eq(nr.denominador, 5));
-//
-//    probar_simplificar((struct NumeroRacional) {3, 5}, (struct NumeroRacional) {3, 5});
-//    probar_simplificar((struct NumeroRacional) {6, 10}, (struct NumeroRacional) {3, 5});
-//    probar_simplificar((struct NumeroRacional) {6, 2}, (struct NumeroRacional) {3, 1});
-//    probar_simplificar((struct NumeroRacional) {-6, 2}, (struct NumeroRacional) {-3, 1});
-//    probar_simplificar((struct NumeroRacional) {6, -2}, (struct NumeroRacional) {-3, 1});
-//
-//    probar_comparar((struct NumeroRacional) {3, 5}, (struct NumeroRacional) {3, 5}, IGUAL);
-//    probar_comparar((struct NumeroRacional) {6, 2}, (struct NumeroRacional) {3, 5}, MAYOR);
-//    probar_comparar((struct NumeroRacional) {1, 7}, (struct NumeroRacional) {3, 5}, MENOR);
-//    probar_comparar((struct NumeroRacional) {6, 2}, (struct NumeroRacional) {3, 1}, IGUAL);
-//
-//    probar_sumar((struct NumeroRacional) {2, 5}, (struct NumeroRacional) {1, 2}, (struct NumeroRacional) {9, 10});
-//    probar_sumar((struct NumeroRacional) {1, 2}, (struct NumeroRacional) {1, 2}, (struct NumeroRacional) {1, 1});
-//    probar_sumar((struct NumeroRacional) {1, 2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {5, 4});
-//    probar_sumar((struct NumeroRacional) {-1, 2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {1, 4});
-//    probar_sumar((struct NumeroRacional) {1, -2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {1, 4});
-//
-//    probar_restar((struct NumeroRacional) {2, 5}, (struct NumeroRacional) {1, 2}, (struct NumeroRacional) {-1, 10});
-//    probar_restar((struct NumeroRacional) {1, 2}, (struct NumeroRacional) {1, 2}, (struct NumeroRacional) {0, 1});
-//    probar_restar((struct NumeroRacional) {1, 2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {-1, 4});
-//    probar_restar((struct NumeroRacional) {-1, 2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {-5, 4});
-//    probar_restar((struct NumeroRacional) {1, -2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {-5, 4});
-//
-//    probar_multiplicar((struct NumeroRacional) {2, 5}, (struct NumeroRacional) {1, 2}, (struct NumeroRacional) {1, 5});
-//    probar_multiplicar((struct NumeroRacional) {1, 2}, (struct NumeroRacional) {1, 2}, (struct NumeroRacional) {1, 4});
-//    probar_multiplicar((struct NumeroRacional) {1, 2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {3, 8});
-//    probar_multiplicar((struct NumeroRacional) {-1, 2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {-3, 8});
-//    probar_multiplicar((struct NumeroRacional) {1, -2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {-3, 8});
-//
-//    probar_dividir((struct NumeroRacional) {2, 5}, (struct NumeroRacional) {1, 2}, (struct NumeroRacional) {4, 5});
-//    probar_dividir((struct NumeroRacional) {1, 2}, (struct NumeroRacional) {1, 2}, (struct NumeroRacional) {1, 1});
-//    probar_dividir((struct NumeroRacional) {1, 2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {2, 3});
-//    probar_dividir((struct NumeroRacional) {-1, 2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {-2, 3});
-//    probar_dividir((struct NumeroRacional) {1, -2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {-2, 3});
+    // struct NumeroRacional nr;
+    // assert(bool_true(nr_inicializar(3, 5, &nr)));
+    // assert(int_eq(nr.numerador, 3));
+    // assert(int_eq(nr.denominador, 5));
+    //
+    // assert(bool_false(nr_inicializar(3, 0, &nr)));
+    // assert(int_eq(nr.numerador, 3));
+    // assert(int_eq(nr.denominador, 5));
+    //
+    // probar_simplificar((struct NumeroRacional) {3, 5}, (struct NumeroRacional) {3, 5});
+    // probar_simplificar((struct NumeroRacional) {6, 10}, (struct NumeroRacional) {3, 5});
+    // probar_simplificar((struct NumeroRacional) {6, 2}, (struct NumeroRacional) {3, 1});
+    // probar_simplificar((struct NumeroRacional) {-6, 2}, (struct NumeroRacional) {-3, 1});
+    // probar_simplificar((struct NumeroRacional) {6, -2}, (struct NumeroRacional) {-3, 1});
+    //
+    // probar_comparar((struct NumeroRacional) {3, 5}, (struct NumeroRacional) {3, 5}, IGUAL);
+    // probar_comparar((struct NumeroRacional) {6, 2}, (struct NumeroRacional) {3, 5}, MAYOR);
+    // probar_comparar((struct NumeroRacional) {1, 7}, (struct NumeroRacional) {3, 5}, MENOR);
+    // probar_comparar((struct NumeroRacional) {6, 2}, (struct NumeroRacional) {3, 1}, IGUAL);
+    //
+    // probar_sumar((struct NumeroRacional) {2, 5}, (struct NumeroRacional) {1, 2}, (struct NumeroRacional) {9, 10});
+    // probar_sumar((struct NumeroRacional) {1, 2}, (struct NumeroRacional) {1, 2}, (struct NumeroRacional) {1, 1});
+    // probar_sumar((struct NumeroRacional) {1, 2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {5, 4});
+    // probar_sumar((struct NumeroRacional) {-1, 2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {1, 4});
+    // probar_sumar((struct NumeroRacional) {1, -2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {1, 4});
+    //
+    // probar_restar((struct NumeroRacional) {2, 5}, (struct NumeroRacional) {1, 2}, (struct NumeroRacional) {-1, 10});
+    // probar_restar((struct NumeroRacional) {1, 2}, (struct NumeroRacional) {1, 2}, (struct NumeroRacional) {0, 1});
+    // probar_restar((struct NumeroRacional) {1, 2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {-1, 4});
+    // probar_restar((struct NumeroRacional) {-1, 2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {-5, 4});
+    // probar_restar((struct NumeroRacional) {1, -2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {-5, 4});
+    //
+    // probar_multiplicar((struct NumeroRacional) {2, 5}, (struct NumeroRacional) {1, 2}, (struct NumeroRacional) {1, 5});
+    // probar_multiplicar((struct NumeroRacional) {1, 2}, (struct NumeroRacional) {1, 2}, (struct NumeroRacional) {1, 4});
+    // probar_multiplicar((struct NumeroRacional) {1, 2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {3, 8});
+    // probar_multiplicar((struct NumeroRacional) {-1, 2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {-3, 8});
+    // probar_multiplicar((struct NumeroRacional) {1, -2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {-3, 8});
+    //
+    // probar_dividir((struct NumeroRacional) {2, 5}, (struct NumeroRacional) {1, 2}, (struct NumeroRacional) {4, 5});
+    // probar_dividir((struct NumeroRacional) {1, 2}, (struct NumeroRacional) {1, 2}, (struct NumeroRacional) {1, 1});
+    // probar_dividir((struct NumeroRacional) {1, 2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {2, 3});
+    // probar_dividir((struct NumeroRacional) {-1, 2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {-2, 3});
+    // probar_dividir((struct NumeroRacional) {1, -2}, (struct NumeroRacional) {3, 4}, (struct NumeroRacional) {-2, 3});
 
     return 0;
 }

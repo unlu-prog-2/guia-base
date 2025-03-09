@@ -24,6 +24,15 @@ enum NRComparacion nr_comparar(struct NumeroRacional f1, struct NumeroRacional f
 }
 
 char *comparacion_to_string(enum NRComparacion comparacion) {
+    switch (comparacion) {
+        case MAYOR:
+            return "MAYOR";
+        case MENOR:
+            return "MENOR";
+        case IGUAL:
+        default:
+            return "IGUAL";
+    }
 }
 
 char *nr_to_string(struct NumeroRacional numeroRacional) {
