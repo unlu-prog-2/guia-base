@@ -1,13 +1,7 @@
-#ifndef ASSERT_H
-#define ASSERT_H
+#ifndef ASERCIONES_H
+#define ASERCIONES_H
 
-#include <string.h>
-#include <stdio.h>
 #include <stdbool.h>
-#include <tipo_elemento.h>
-#include "listas/listas.h"
-#include "pilas/pilas.h"
-#include "colas/colas.h"
 
 bool bool_eq(bool real, bool esperado);
 
@@ -61,37 +55,4 @@ bool ptr_null(void *real);
 
 bool ptr_not_null(void *real);
 
-// ------------
-// TipoElemento
-// ------------
-bool te_eq(TipoElemento real, TipoElemento esperado);
-
-bool te_eq_valor(TipoElemento real, TipoElemento esperado,
-                 bool (*compararTipoElemento)(TipoElemento este, TipoElemento otro));
-
-// ------------
-// Listas
-// ------------
-bool listas_eq(Lista real, Lista esperado);
-
-bool listas_eq_fn(Lista real, Lista esperado, bool (*compararTipoElemento)(TipoElemento este, TipoElemento otro),
-                  char *(*toStringTipoElemento)(TipoElemento te));
-
-
-// ------------
-// Pilas
-// ------------
-bool pilas_eq(Pila real, Pila esperado);
-
-bool pilas_eq_fn(Pila real, Pila esperado, bool (*compararTipoElemento)(TipoElemento este, TipoElemento otro),
-                 char *(*toStringTipoElemento)(TipoElemento te));
-
-// ------------
-// Colas
-// ------------
-bool colas_eq(Cola real, Cola esperado);
-
-bool colas_eq_fn(Cola real, Cola esperado, bool (*compararTipoElemento)(TipoElemento este, TipoElemento otro),
-                 char *(*toStringTipoElemento)(TipoElemento te));
-
-#endif // ASSERT_H
+#endif // ASERCIONES_H

@@ -3,7 +3,10 @@ project(utilidades)
 # Habilitar la opción Werror
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror")
 
-add_library(utilidades STATIC aserciones.c cadenas.c util_listas.c)
-target_link_libraries(utilidades tipo_elemento listas_arreglos pilas_arreglos colas_arreglos)
+add_library(aserciones STATIC aserciones.c)
+target_link_libraries(aserciones)
+target_include_directories(aserciones PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_include_directories(utilidades PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+add_library(cadenas STATIC cadenas.c)
+target_link_libraries(cadenas)
+target_include_directories(cadenas PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
