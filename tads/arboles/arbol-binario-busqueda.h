@@ -2,11 +2,8 @@
 #define ARBOL_BINARIO_BUSQUEDA_H_INCLUDED
 
 #include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "nodo.h"
-#include "tipo_elemento.h"
+#include "tipo_elemento/tipo_elemento.h"
 
 struct ArbolBinarioBusquedaRep;
 typedef struct ArbolBinarioBusquedaRep *ArbolBinarioBusqueda;

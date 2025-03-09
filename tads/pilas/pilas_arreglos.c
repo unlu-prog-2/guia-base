@@ -2,10 +2,9 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
-
 #include "pilas.h"
 
-static const int TAMANIO_MAXIMO = 100;
+static const int TAMANIO_MAXIMO = 1000;
 
 struct PilaRep {
     TipoElemento *valores;
@@ -13,10 +12,6 @@ struct PilaRep {
 };
 
 Pila p_crear() {
-}
-
-bool p_es_llena(Pila pila) {
-    return pila->tope == TAMANIO_MAXIMO;
 }
 
 bool p_apilar(Pila pila, TipoElemento elemento) {
@@ -29,6 +24,9 @@ TipoElemento p_tope(Pila pila) {
 }
 
 bool p_es_vacia(Pila pila) {
+}
+
+bool p_es_llena(Pila pila) {
 }
 
 void p_mostrar(Pila pila) {

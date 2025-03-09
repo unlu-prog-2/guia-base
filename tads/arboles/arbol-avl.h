@@ -2,9 +2,6 @@
 #define ARBOL_AVL_H_INCLUDED
 
 #include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "nodo.h"
 
 struct ArbolAVLRep;

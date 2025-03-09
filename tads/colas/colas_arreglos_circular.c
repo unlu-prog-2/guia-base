@@ -4,37 +4,49 @@
 #include <stdbool.h>
 #include <string.h>
 
-static const int TAMANIO_MAXIMO = 100;
+static const int TAMANIO_MAXIMO = 1000;
 
 struct ColaRep {
     TipoElemento *valores;
-    int frente;
-    int final;
+    unsigned int frente;
+    unsigned int final;
 };
 
-/** Función interna que hace avanzar el frente o el final hacia adelante */
-int paso(int posicion);
+// Función interna que hace avanzar el frente y el final hacia adelante
+unsigned int paso(unsigned int posicion);
 
-/** Función interna que calcula la cantidad de elementos de la cola */
-int c_longitud(Cola cola);
+Cola c_crear() {
+}
 
-/** Función interna que dice si hay lugar para almacenar más elementos o no */
-bool c_es_llena(Cola cola);
+bool c_encolar(Cola cola, TipoElemento elemento) {
+}
+
+TipoElemento c_desencolar(Cola cola) {
+}
+
+bool c_es_vacia(Cola cola) {
+}
+
+TipoElemento c_recuperar(Cola cola) {
+}
+
+bool c_es_llena(Cola cola) {
+}
+
+void c_mostrar(Cola cola) {
+}
+
 
 //-----------------
 // Rutinas internas
 //-----------------
-int paso(int posicion) {
+unsigned int paso(unsigned int posicion) {
     return posicion % TAMANIO_MAXIMO + 1;
 }
 
-bool c_es_llena(Cola cola) {
-    return paso(paso(cola->final)) == cola->frente;
-}
-
-int c_longitud(Cola cola) {
-    int i = 0;
-    int pos = cola->frente;
+unsigned int c_longitud(Cola cola) {
+    unsigned i = 0;
+    unsigned pos = cola->frente;
     while (pos != cola->final) {
         i++;
         pos = paso(pos);
@@ -45,7 +57,7 @@ int c_longitud(Cola cola) {
 char *c_to_string(Cola cola) {
     char *resultado = (char *) malloc(sizeof(char) * (c_longitud(cola) * 10 + 3));
     strcpy(resultado, "[");
-    for (int i = cola->frente; i <= cola->final; i = paso(i)) {
+    for (unsigned int i = cola->frente; i <= cola->final; i = paso(i)) {
         char num_str[10];
         sprintf(num_str, "%d", cola->valores[i]->clave);
         strcat(resultado, num_str);

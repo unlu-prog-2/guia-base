@@ -5,6 +5,8 @@
 
 #include "pilas.h"
 
+static const int TAMANIO_MAXIMO = 1000;
+
 struct Nodo {
     TipoElemento datos;
     struct Nodo *siguiente;
@@ -20,6 +22,7 @@ Pila p_crear() {
 bool p_apilar(Pila pila, TipoElemento elemento) {
 }
 
+
 TipoElemento p_desapilar(Pila pila) {
 }
 
@@ -32,7 +35,7 @@ bool p_es_vacia(Pila pila) {
 //-----------------------------------------------------------
 // Rutina interna que calcula los elementos de la pila
 //-----------------------------------------------------------
-int longitud(Pila pila) {
+int p_longitud(Pila pila) {
     int i = 0;
     struct Nodo *nodo = pila->tope;
     while (nodo != NULL) {
@@ -42,11 +45,14 @@ int longitud(Pila pila) {
     return i;
 }
 
+bool p_es_llena(Pila pila) {
+}
+
 void p_mostrar(Pila pila) {
 }
 
 char *p_to_string(Pila pila) {
-    int cantidad = longitud(pila);
+    int cantidad = p_longitud(pila);
 
     char *resultado = (char *) malloc(sizeof(char) * (cantidad * 10 + 3));
     strcpy(resultado, "[");

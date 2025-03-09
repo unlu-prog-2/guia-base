@@ -1,5 +1,5 @@
+#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "nodo.h"
 
 // retorna el hijo izquierdo
@@ -28,7 +28,7 @@ NodoArbol n_crear(TipoElemento te) {
     na->hd = NULL;
     na->fe = 0;
     return na;
-};
+}
 
 // retorno el tipo elemento de un nodo o NULL si no existe
 TipoElemento n_recuperar(NodoArbol nodo) {
@@ -37,4 +37,4 @@ TipoElemento n_recuperar(NodoArbol nodo) {
     }
 
     return nodo->datos;
-};
+}

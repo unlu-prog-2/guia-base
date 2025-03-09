@@ -2,7 +2,7 @@
 #define UTIL_ARBOLES_H
 
 #include "nodo.h"
-#include "../listas/listas.h"
+#include "listas/listas.h"
 
 enum Recorrido {
     PRE_ORDEN,

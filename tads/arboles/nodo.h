@@ -1,7 +1,7 @@
 #ifndef NODO_H
 #define NODO_H
 
-#include "tipo_elemento.h"
+#include "tipo_elemento/tipo_elemento.h"
 
 struct NodoArbolRep {
     TipoElemento datos;

@@ -1,11 +1,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../tipo_elemento.h"
+#include "tipo_elemento/tipo_elemento.h"
 #include "pilas.h"
 #include "util_pilas.h"
 
-Pila crear_pila_desde_array(int *vector, int tamano) {
+Pila crear_pila_desde_array(const int *vector, const int tamano) {
     Pila p = p_crear();
 
     for (int i = 0; i < tamano; i++) {

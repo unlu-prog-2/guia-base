@@ -1,11 +1,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../tipo_elemento.h"
+#include "tipo_elemento/tipo_elemento.h"
 #include "colas.h"
 #include "util_colas.h"
 
-Cola crear_cola_desde_array(int *vector, int tamano) {
+Cola crear_cola_desde_array(const int *vector, const int tamano) {
     Cola p = c_crear();
 
     for (int i = 0; i < tamano; i++) {

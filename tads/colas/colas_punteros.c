@@ -4,6 +4,8 @@
 #include <stdbool.h>
 #include <string.h>
 
+static const int TAMANIO_MAXIMO = 1000;
+
 struct Nodo {
     TipoElemento datos;
     struct Nodo *siguiente;
@@ -13,6 +15,29 @@ struct ColaRep {
     struct Nodo *frente;
     struct Nodo *final;
 };
+
+int c_longitud(Cola cola);
+
+Cola c_crear(void) {
+}
+
+bool c_encolar(Cola cola, TipoElemento elemento) {
+}
+
+TipoElemento c_desencolar(Cola cola) {
+}
+
+bool c_es_vacia(Cola cola) {
+}
+
+bool c_es_llena(Cola cola) {
+}
+
+TipoElemento c_recuperar(Cola cola) {
+}
+
+void c_mostrar(Cola cola) {
+}
 
 //-----------------------------------------------------------
 // Rutina interna que calcula los elementos de la pila
@@ -28,7 +53,7 @@ int c_longitud(Cola cola) {
 }
 
 char *c_to_string(Cola cola) {
-    int cantidad = c_longitud(cola);
+    const int cantidad = c_longitud(cola);
 
     char *resultado = (char *) malloc(sizeof(char) * (cantidad * 10 + 3));
     strcpy(resultado, "[");

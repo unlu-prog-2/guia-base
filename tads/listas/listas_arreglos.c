@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 
-static const int TAMANIO_MAXIMO = 100;
+static const int TAMANIO_MAXIMO = 1000;
 
 struct ListaRep {
     TipoElemento *valores;
@@ -37,16 +37,16 @@ int l_longitud(Lista lista) {
 bool l_agregar(Lista lista, TipoElemento elemento) {
 }
 
-bool  l_borrar(Lista lista, int clave) {
+bool l_borrar(Lista lista, int clave) {
 }
 
 TipoElemento l_buscar(Lista lista, int clave) {
 }
 
-bool  l_insertar(Lista lista, TipoElemento elemento, int pos) {
+bool l_insertar(Lista lista, TipoElemento elemento, int pos) {
 }
 
-bool  l_eliminar(Lista lista, int pos) {
+bool l_eliminar(Lista lista, int pos) {
 }
 
 TipoElemento l_recuperar(Lista lista, int pos) {

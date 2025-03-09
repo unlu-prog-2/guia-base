@@ -5,11 +5,12 @@
 
 #include "colas.h"
 
-static const int TAMANIO_MAXIMO = 100;
+static const int TAMANIO_MAXIMO = 1000;
 
 struct ColaRep {
     TipoElemento *valores;
-    int final;
+    unsigned int frente;
+    unsigned int final;
 };
 
 Cola c_crear() {
@@ -29,6 +30,9 @@ bool c_es_vacia(Cola cola) {
 }
 
 TipoElemento c_recuperar(Cola cola) {
+}
+
+void c_mostrar(Cola cola) {
 }
 
 char *c_to_string(Cola cola) {

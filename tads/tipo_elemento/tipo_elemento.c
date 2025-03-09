@@ -5,6 +5,7 @@
 TipoElemento te_crear(int clave) {
     TipoElemento te = (TipoElemento) malloc(sizeof(struct TipoElementoRep));
     te->clave = clave;
+    te->valor = NULL;
     return te;
 }
 

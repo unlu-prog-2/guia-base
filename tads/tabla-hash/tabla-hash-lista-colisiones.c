@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include "tabla-hash.h"
-#include "../listas/listas.h"
+#include "listas/listas.h"
 
 struct TipoRegistroTabla {
     TipoElemento tipo_elemento;
@@ -53,7 +53,6 @@ void th_mostrar_interna(TablaHash th, bool soloOcupados) {
 void th_mostrar(TablaHash th) {
     th_mostrar_interna(th, false);
 }
-
 
 void th_mostrar_solo_ocupados(TablaHash th) {
     th_mostrar_interna(th, true);

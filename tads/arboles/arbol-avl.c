@@ -1,11 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "nodo.h"
 #include "arbol-avl.h"
+
+static const int TAMANIO_MAXIMO = 1000;
 
 struct ArbolAVLRep {
     NodoArbol raiz;
     int cantidad_elementos;
 };
-
 
 NodoArbol avl_rotar_derecha(NodoArbol nodo);
 
@@ -31,6 +35,12 @@ ArbolAVL avl_crear() {
 bool avl_es_vacio(ArbolAVL a) {
 }
 
+bool avl_es_lleno(ArbolAVL a) {
+}
+
+bool avl_es_rama_nula(NodoArbol pa) {
+}
+
 int avl_cantidad_elementos(ArbolAVL a) {
 }
 
@@ -38,7 +48,7 @@ NodoArbol avl_raiz(ArbolAVL a) {
 }
 
 enum Balanceo avl_calcular_balanceo(NodoArbol nodo) {
-    int diferenciaAltura = avl_altura_izq(nodo) - avl_altura_der(nodo);
+    const int diferenciaAltura = avl_altura_izq(nodo) - avl_altura_der(nodo);
     switch (diferenciaAltura) {
         case -2:
             return DESBALANCEADO_DERECHA;
@@ -53,21 +63,26 @@ enum Balanceo avl_calcular_balanceo(NodoArbol nodo) {
     }
 }
 
-NodoArbol avl_insertar_recursivo(ArbolAVL a, TipoElemento te, NodoArbol pa) {
+NodoArbol avl_insertar_recursivo(ArbolAVL a, TipoElemento te, NodoArbol pa, bool *inserto) {
 }
 
 bool avl_insertar(ArbolAVL a, TipoElemento te) {
-    a->raiz = avl_insertar_recursivo(a, te, avl_raiz(a));
+    bool inserto = false;
+    a->raiz = avl_insertar_recursivo(a, te, avl_raiz(a), &inserto);
+    a->cantidad_elementos++;
+    return inserto;
 }
 
 NodoArbol avl_buscar_minimo(NodoArbol nodoArbol) {
 }
 
-NodoArbol avl_eliminar_recursivo(ArbolAVL arbol, NodoArbol nodoArbol, int claveABorrar) {
+NodoArbol avl_eliminar_recursivo(ArbolAVL arbol, NodoArbol nodoArbol, int claveABorrar, bool *borre) {
 }
 
 bool avl_eliminar(ArbolAVL a, int claveABorrar) {
-    a->raiz = avl_eliminar_recursivo(a, avl_raiz(a), claveABorrar);
+    bool borre = false;
+    a->raiz = avl_eliminar_recursivo(a, avl_raiz(a), claveABorrar, &borre);
+    return borre;
 }
 
 TipoElemento avl_buscar_recursivo(NodoArbol nodoArbol, int clave) {

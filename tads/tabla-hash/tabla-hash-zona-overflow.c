@@ -10,8 +10,7 @@ struct TipoRegistroTabla {
 };
 
 struct TablaHashRep {
-    int (*hash_function)(int);
-
+    int (*hash_function)(int);   // puntero a la función hash
     int capacidad;
     struct TipoRegistroTabla *tabla;
     struct TipoRegistroTabla *zona_overflow;
@@ -56,7 +55,6 @@ void th_mostrar_interna(TablaHash th, bool soloOcupados) {
 void th_mostrar(TablaHash th) {
     th_mostrar_interna(th, false);
 }
-
 
 void th_mostrar_solo_ocupados(TablaHash th) {
     th_mostrar_interna(th, true);

@@ -2,9 +2,9 @@
 #define UTIL_PILAS_H
 
 #include "pilas.h"
-#include "../tipo_elemento.h"
+#include "tipo_elemento/tipo_elemento.h"
 
-Pila crear_pila_desde_array(int *vector, int tamano);
+Pila crear_pila_desde_array(const int *vector, int tamano);
 
 void destruir_pila(Pila p);
 
