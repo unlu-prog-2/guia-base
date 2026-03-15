@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.24)
-project(guia-2024-base C)
+project(guia-2026-base C)
 
 set(CMAKE_C_STANDARD 11)
 
